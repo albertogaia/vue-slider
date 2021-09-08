@@ -13,7 +13,18 @@
 </head>
 <body>
     <div id="root" class="container">
-        
+        <div class="slider-wrapper">
+            <div class="prev" @click="prevPhoto">
+                <i class="fas fa-angle-left"></i>
+            </div>
+            <div class="images">
+                <img :src="photos[counterPhoto]" alt="image 1">
+            </div>
+            <div class="next">
+                <i class="fas fa-angle-right" @click="nextPhoto"></i>
+            </div>
+        </div>
+
     </div>
 
 
