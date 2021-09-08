@@ -4,6 +4,7 @@ const app = new Vue({
     el: '#root',
     mounted() {
         this.startRotation();
+        document.addEventListener("keyup", this.changePhotoArrow);
     },
     data: {
         counterPhoto: 0,
@@ -24,7 +25,7 @@ const app = new Vue({
             this.counterPhoto -= 1;
             if(this.counterPhoto < 0)
                 this.counterPhoto = this.photos.length - 1;
-            
+    
             this.resetRotation();
         },
         nextPhoto(){
@@ -33,6 +34,21 @@ const app = new Vue({
                 this.counterPhoto = 0;
             
             this.resetRotation();
+        },
+
+        changePhotoArrow(){
+            if (event.keyCode == 37) {
+                this.counterPhoto -= 1;
+                if(this.counterPhoto < 0)
+                this.counterPhoto = this.photos.length - 1;
+                this.resetRotation();
+
+            } else if (event.keyCode == 39) {
+                this.counterPhoto += 1;
+                if(this.counterPhoto == this.photos.length)
+                this.counterPhoto = 0;
+                this.resetRotation();
+            }
         },
 
         startRotation(){
