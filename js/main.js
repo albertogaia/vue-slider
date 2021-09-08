@@ -15,7 +15,7 @@ const app = new Vue({
             'resevoir-dogs',
         ],
         imgExtension: '.jpg',
-        active: 'false',
+        active: false,
         timer: null,
     },
 
@@ -24,23 +24,40 @@ const app = new Vue({
             this.counterPhoto -= 1;
             if(this.counterPhoto < 0)
                 this.counterPhoto = this.photos.length - 1;
+            
+            this.resetRotation();
         },
         nextPhoto(){
             this.counterPhoto += 1;
             if(this.counterPhoto == this.photos.length)
                 this.counterPhoto = 0;
+            
+            this.resetRotation();
         },
 
         startRotation(){
-            this.timer = setInterval(this.nextPhoto, 4000);
+            this.timer = setInterval(this.nextPhoto, 3000);
         },
 
         stopRotation(){
             clearTimeout(this.timer);
             this.timer = null;
         },
+
+        resetRotation(){
+            clearTimeout(this.timer);
+            this.startRotation();
+        },
+
         selectedImg(i){
             this.counterPhoto = i;
+            this.resetRotation();
+        },
+        mouseOver(){
+            this.active = !this.active;
+        },
+        mouseOut(){
+            this.active = false;
         }
     }
 })

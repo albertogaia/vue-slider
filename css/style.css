@@ -67,7 +67,7 @@ body{ font-family: 'Lato';}
 }
 
 .title-film > h1 {
-    display: none;
+    /* display: none; */
     color: white;
     text-transform: uppercase;
     position: absolute;
@@ -80,6 +80,6 @@ body{ font-family: 'Lato';}
     background-color: rgba(0, 0, 0, 0.502);
 }
 
-.images:hover .title-film h1{
+/* .images:hover .title-film h1{
     display: inline-block;
-}
+} */

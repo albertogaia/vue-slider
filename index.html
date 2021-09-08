@@ -20,8 +20,8 @@
             </div>
 
             <div class="images" v-on:mouseover="stopRotation" v-on:mouseout="startRotation">
-                <img :src="imgPath + photos[counterPhoto] + imgExtension" :alt="photos[counterPhoto]">
-                <div class="title-film">
+                <img :src="imgPath + photos[counterPhoto] + imgExtension" :alt="photos[counterPhoto]"  @mouseover="mouseOver">
+                <div v-show="active" @mouseout="mouseOut" class="title-film">
                     <h1>{{photos[counterPhoto]}}</h1>
                 </div>
             </div>
@@ -31,8 +31,7 @@
             </div>
             
             <div class="nav">
-                <i v-for="(photo, index) in photos" :class="(index == counterPhoto) ? 'active' : 'null' "  class="fas fa-circle" @click="selectedImg(index)"></i>
-                
+                <i v-for="(photo, index) in photos" :class="(index == counterPhoto) ? 'active' : 'null' "  class="fas fa-circle" @click="selectedImg(index)" :title="photos[index].toUpperCase()"></i>
             </div>
 
         </div>
