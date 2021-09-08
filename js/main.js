@@ -4,12 +4,15 @@ const app = new Vue({
     el: '#root',
     data: {
         counterPhoto: 0,
+        imgPath: 'img/',
         photos: [
-            'img/django.jpg',
-            'img/hateful-eight.jpg',
-            'img/Kill-Bill-Vol-2.jpg',
-            'img/resevoir-dogs.jpg',
-        ]
+            'django',
+            'hateful-eight',
+            'Kill-Bill-Vol-2',
+            'resevoir-dogs',
+        ],
+        imgExtension: '.jpg',
+        active: 'false',
     },
     methods: {
         prevPhoto(){
@@ -23,6 +26,6 @@ const app = new Vue({
             if(this.counterPhoto == this.photos.length)
                 this.counterPhoto = 0;
             
-        }
+        },
     }
 })

@@ -23,6 +23,7 @@ body{ font-family: 'Lato';}
 }
 
 .slider-wrapper .images{
+    position: relative;
     height: 100%;
     width: 100%;
     text-align: center;
@@ -35,6 +36,48 @@ body{ font-family: 'Lato';}
 
 .prev, .next{
     color: grey;
-    font-size: 40px;
+    font-size: 50px;
     cursor: pointer;
+}
+
+.nav{
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    padding: 20px;
+    border-radius: 50px;
+    background: rgba(0, 0, 0, 0.516);
+    color: white;
+}
+
+.nav > i {
+    margin: 0 10px
+}
+
+.nav > i.active{
+    color: blue;
+}
+
+.title-film {
+    position: absolute;
+    inset: 0;
+}
+
+.title-film > h1 {
+    display: none;
+    color: white;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.images:hover .title-film{
+    background-color: rgba(0, 0, 0, 0.502);
+}
+
+.images:hover .title-film h1{
+    display: inline-block;
 }

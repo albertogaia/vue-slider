@@ -14,14 +14,24 @@
 <body>
     <div id="root" class="container">
         <div class="slider-wrapper">
+
             <div class="prev" @click="prevPhoto">
                 <i class="fas fa-angle-left"></i>
             </div>
+
             <div class="images">
-                <img :src="photos[counterPhoto]" alt="image 1">
+                <img :src="imgPath + photos[counterPhoto] + imgExtension" :alt="photos[counterPhoto]">
+                <div class="title-film">
+                    <h1>{{photos[counterPhoto]}}</h1>
+                </div>
             </div>
+
             <div class="next">
                 <i class="fas fa-angle-right" @click="nextPhoto"></i>
+            </div>
+            
+            <div class="nav">
+                <i :class="(index == counterPhoto) ? 'active' : 'null' " class="fas fa-circle" v-for="(photo, index) in photos"></i>
             </div>
         </div>
 
