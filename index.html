@@ -31,7 +31,8 @@
             </div>
             
             <div class="nav">
-                <i :class="(index == counterPhoto) ? 'active' : 'null' " class="fas fa-circle" v-for="(photo, index) in photos"></i>
+                <i v-for="(photo, index) in photos" :class="(index == counterPhoto) ? 'active' : 'null' "  class="fas fa-circle" @click="selectedImg(index)"></i>
+                
             </div>
 
         </div>

@@ -52,7 +52,9 @@ body{ font-family: 'Lato';}
 }
 
 .nav > i {
-    margin: 0 10px
+    margin: 0 10px;
+    color: white;
+    cursor: pointer;
 }
 
 .nav > i.active{

@@ -32,12 +32,15 @@ const app = new Vue({
         },
 
         startRotation(){
-            this.timer = setInterval(this.nextPhoto, 2000);
+            this.timer = setInterval(this.nextPhoto, 4000);
         },
 
         stopRotation(){
             clearTimeout(this.timer);
             this.timer = null;
+        },
+        selectedImg(i){
+            this.counterPhoto = i;
         }
     }
 })
