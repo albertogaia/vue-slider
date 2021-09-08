@@ -19,7 +19,7 @@
                 <i class="fas fa-angle-left"></i>
             </div>
 
-            <div class="images">
+            <div class="images" v-on:mouseover="stopRotation" v-on:mouseout="startRotation">
                 <img :src="imgPath + photos[counterPhoto] + imgExtension" :alt="photos[counterPhoto]">
                 <div class="title-film">
                     <h1>{{photos[counterPhoto]}}</h1>
@@ -33,6 +33,7 @@
             <div class="nav">
                 <i :class="(index == counterPhoto) ? 'active' : 'null' " class="fas fa-circle" v-for="(photo, index) in photos"></i>
             </div>
+
         </div>
 
     </div>
